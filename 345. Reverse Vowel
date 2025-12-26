@@ -1,0 +1,24 @@
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        i = 0
+        j = len(s)-1
+        li = list(s)
+        while i<j and i!=j:
+            if li[i] == 'a' or li[i] == 'e' or li[i] == 'i' or li[i] == 'o' or li[i] == 'u'\
+             or li[i] == 'A' or li[i] == 'E' or li[i] == 'I' or li[i] == 'O' or li[i] == 'U':
+                if li[j] == 'a' or li[j] == 'e' or li[j] == 'i' or li[j] == 'o' or li[j] == 'u'\
+                 or  li[j] == 'A' or li[j] == 'E' or li[j] == 'I' or li[j] == 'O' or li[j] == 'U':
+                    li[i], li[j] = li[j], li[i]
+                    if len(s) != 2:
+                        i+=1
+                        j-=1
+                    else:
+                        j-=1
+                else:
+                    j-=1
+            else:
+                i+=1
+
+        r = ''.join(li)
+        return r
+        
